@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact me</title>
+    <link rel="stylesheet" href="./style/css.css">
+    <script src="https://kit.fontawesome.com/6ef21de30d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <h1 class="logo">Rose Mystica</h1>
+            </div>
+            <div class="profile-ctr">
+                <i class="fa-solid fa-user"></i>
+                <span>Marie</span>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+        </div>
+        <div class="dashboard-content">
+            <div class="aside-bar">
+                
+                    <button onclick="manageBlogFunc()" class="btn-ctl" id="blog-btn">manage blog</button>
+                    <button onclick="manageContactFunc()" class="btn-ctl" id="contact-btn">contact me</button>
+                
+            </div>
+            <div class="content-section">
+                <div class="content-section-container" >
+                    <div class="addBlog-button">
+                        <button onclick="blogModalFunc()"  class="btn-big" >add blog</button>
+                        
+                    </div>
+                    <div class="content" >
+                        <!-- <h2 class="page-title">manage blogs</h2> -->
+                        <table>
+                            <thead>
+                                <th>No</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th colspan="3 ">Action</th>
+                            </thead>
+                            <tbody id="table">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="create-blog-modal">
+            <div class="create-blog-card">
+                <div class="close-modal">
+                    <i id="close-blog-modal"  class="fa-solid fa-square-xmark"></i>
+                </div>
+                <form>
+                    <div class="input-text">
+                        <label >No</label>
+                        <input type="hidden" name="id" id="id" class="text-input">
+                    </div>
+
+                    <div class="input-text">
+                        <label >Title</label>
+                        <input type="text" name="title" id="title"  class="text-input">
+                    </div>
+
+                    <div class="input-text">
+                        <label >Author</label>
+                        <input type="text" name="author"  id="author" class="text-input">
+                    </div>
+
+                    <!-- <div>
+                        <label >Body</label>
+                        <textarea name="body" id="body"></textarea>
+                    </div> -->
+                    <!-- <div>
+                        <select name="" id=""></select>
+                    </div> -->
+                    <!-- <div class="button-addBlog">
+                        <button type="submit"  class=" btn btn-big" onclick="save()" >Add blog</button>
+                    </div> -->
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+    <script>
+        var manageBlog=document.querySelector("#blog-btn");
+        function manageBlogFunc(){
+            window.location.href="./index.html"
+
+        }
+        var manageBlog=document.querySelector("#contact-btn");
+        
+
+        function manageContactFunc(){
+            window.location.href="./contact_me.html"
+        }
+        var blogModal= document.querySelector(".create-blog-modal");
+        var closeBlogModal= document.querySelector("#close-blog-modal");
+       function blogModalFunc(){
+        blogModal.style.display = "flex";
+        }
+        closeBlogModal.addEventListener("click", closeBlogModalFunc);
+        function closeBlogModalFunc(){
+            blogModal.style.display = "none";
+        }
+
+        window.addEventListener("click", outsideClickBlogModal);
+        function outsideClickBlogModal(e){
+            if(e.target == blogModal){
+                blogModal.style.display = "none";
+            }
+        }
+
+
+    </script>
+    <script src="./js/scripts.js"></script>
+    <script src="./js/all_data.js"></script>
+    <script src="./js/save.js"></script>
+    <script src="./js/find.js"></script>
+    <script src="./js/remove.js"></script>
+    <script>
+        allData()
+    </script>
+
+</body>
+</html>
