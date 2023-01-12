@@ -13,23 +13,26 @@
         <div class="signUp">
             <h2>Sign up</h2>
         
-        <form class="form-controller">
+        <form class="form-controller"  onsubmit="redirect_login()" >
             <div class="input-controller">
+                <div class="input-text">
+                    <input type="hidden" name="id" id="id" class="text-input">
+                </div>
                 <label for="uname"><b>Full name</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
             </div>
             <div class="input-controller">
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter email" name="email" required>
+                <input type="text" placeholder="Enter email" name="email" id="email" required>
             </div>
             <div class="input-controller">
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
             </div>
             <div class="submit-control-container">
                 <div class="submit-control">
-                    <button type="submit"><a href="/login.html">sign Up</a></button>
-                    <p>have account?? <a href="/login.html">Login</a></p>
+                    <button type="submit" onclick="saveLogin()"><a href="../portifolio/login.html">sign Up</a></button>
+                    <p>have account?? <a href="../portifolio/login.html">Login</a></p>
                 </div>
             </div>
             
@@ -40,6 +43,14 @@
         
         
     </div>
+
+
+<!-- <script src="../Dashboard/js/scripts.js"></script> -->
+<script src="../Dashboard/js/login_data.js"></script>
+<script src="./../Dashboard/js/save_login.js"></script>
+<script src="./../Dashboard/js/remove.js"></script>
+
+
 
 
 </body>

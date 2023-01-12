@@ -1,15 +1,32 @@
+var manageBlog=document.querySelector("#blog-btn");
+        function manageBlogFunc(){
+            window.location.href="./index.html"
 
-ClassicEditor
-    .create( document.querySelector( '#body' ), {
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-            ]
         }
-    } )
-    .catch( error => {
-        console.log( error );
-    } );
+        var manageBlog=document.querySelector("#contact-btn");
+        
+
+        function manageContactFunc(){
+            window.location.href="./contact_me.html"
+        }
+
+        function manageLoginFunc(){
+            window.location.href="./control_login.html"
+        }
+
+        var blogModal= document.querySelector(".create-blog-modal");
+        var closeBlogModal= document.querySelector("#close-blog-modal");
+       function blogModalFunc(){
+        blogModal.style.display = "flex";
+        }
+        closeBlogModal.addEventListener("click", closeBlogModalFunc);
+        function closeBlogModalFunc(){
+            blogModal.style.display = "none";
+        }
+
+        window.addEventListener("click", outsideClickBlogModal);
+        function outsideClickBlogModal(e){
+            if(e.target == blogModal){
+                blogModal.style.display = "none";
+            }
+        }

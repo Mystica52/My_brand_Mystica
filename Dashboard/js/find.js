@@ -2,9 +2,9 @@
 var blogModal= document.querySelector(".create-blog-modal");
 function updateBlogFunc(id){
    // console.log(id);
-   contactList = JSON.parse(localStorage.getItem('listItem')) ?? []
+   blogList = JSON.parse(localStorage.getItem('listItem')) ?? []
 
-    contactList.forEach(function (value){
+    blogList.forEach(function (value){
         if(value.id == id){
            document.getElementById('id').value = value.id
            document.getElementById('title').value = value.title
@@ -13,5 +13,8 @@ function updateBlogFunc(id){
     })
     blogModal.style.display = "flex";
 }
+
+
+
 
 

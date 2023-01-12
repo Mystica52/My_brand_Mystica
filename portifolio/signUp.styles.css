@@ -54,11 +54,13 @@ input{
     justify-content: space-between;
     width: 300px;
 }
-button{
+.submit-control button{
     border-radius:10px;
     width: 150px;
     height: 30px;
     border: 0;
+    color: #000;
+    text-decoration: none;
 
 }
 .submit-control p{

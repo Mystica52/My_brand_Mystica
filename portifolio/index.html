@@ -31,7 +31,7 @@
             <li> <a href="#blog">BLOG</a></li>
             <li> <a href="#my-work">MY WORK</a></li>
             <li> <a href="#contact-me">CONTACT ME</a></li>
-            <li> <a href="/login.html">LOGIN</a></li>
+            <li> <a href="../portifolio/login.html">LOGIN</a></li>
             
         </ul>
     
@@ -197,31 +197,38 @@
             </div>
             <!-- <a href="#" class="fa fa-facebook"></a> -->
            
-        
-         <div class="direct-message">
-            <form class="form-controller">
-                <div class="input-contact">
-                    <label for="username">FullName</label>
-                    <input type="text" id="username" name="username">
-                </div>
-                <div class="input-contact">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" name="address">
-                </div>
-                <div class="input-contact">
-                    <label for="message">Message</label>
-                <textarea type="text" id="message" name="message"></textarea>
-                </div>
+        <div class="contact-message-section">
+            <div class="direct-message">
+                <form class="form-controller" id="contact-me-form">
+                    <div class="input-text">
+                        <input type="hidden" name="id" id="id" class="text-input">
+                    </div>
+                    <div class="input-contact">
+                        <label for="username">FullName</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="input-contact">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="input-contact">
+                        <label for="message">Message</label>
+                    <textarea type="text" id="message" name="message" required></textarea>
+                    </div>
+    
+                    <div class="message-button">
+                        <button type="submit" class="btn btn-message"  onclick="saveContact()">submit</button>
+                    </div>
+                    
+                    
+                </form>
                 
-                
-                
-                
-
-            </form>
-        
-        
-         </div>
-          </div>
+            
+            
+             </div>
+        </div>
+         
+        </div>
      </div>
      <!-- footer -->
      
@@ -234,5 +241,10 @@
         <div class="copyright">Copyright @ Mystica 2022</div>
     </footer>
 </div>
+
+<script src="../Dashboard/js/contact_us.js"></script>
+<script src="./../Dashboard/js/find.js"></script>
+<script src="./../Dashboard/js/remove.js"></script>
 </body>
+
 </html>
