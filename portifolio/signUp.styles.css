@@ -72,3 +72,20 @@ input{
     text-decoration: none;
 
 }
+
+@media screen and (max-width: 480px){
+    .input-controller{
+        display:flex;
+        flex-direction: column;
+    }
+
+
+    .container-signup{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        padding:25px
+    }
+}
