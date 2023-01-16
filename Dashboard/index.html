@@ -26,6 +26,7 @@
                     <button onclick="manageBlogFunc()" class="btn-ctl" id="blog-btn">manage blog</button>
                     <button onclick="manageContactFunc()" class="btn-ctl" id="contact-btn">contact me</button>
                     <button onclick="manageLoginFunc()" class="btn-ctl" id="contact-btn">manager login-user</button>
+                    <button onclick="goToPortfolio()" class="btn-ctl" id="contact-btn">Go to portfolio</button>
                 
             </div>
             <div class="content-section">
@@ -96,6 +97,11 @@
         function manageLoginFunc(){
             window.location.href="./control_login.html"
         }
+
+        function goToPortfolio(){
+            window.location.href="./../portifolio/index.html"
+        }
+
         var blogModal= document.querySelector(".create-blog-modal");
         var closeBlogModal= document.querySelector("#close-blog-modal");
        function blogModalFunc(){
