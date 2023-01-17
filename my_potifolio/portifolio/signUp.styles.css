@@ -46,6 +46,7 @@ input{
 .submit-control-container{
     display: flex;
     justify-content: flex-end;
+    padding:30px;
     width:80%
 }
 .submit-control{

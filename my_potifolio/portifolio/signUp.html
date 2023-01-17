@@ -14,24 +14,35 @@
             <h2>Sign up</h2>
         
         <form class="form-controller"  id="form" >
-            <div class="input-controller">
-                <div class="input-text">
-                    <input type="hidden" name="id" id="id" class="text-input">
+
+            <div class="input-text">
+                <input type="hidden" name="id" id="id" class="text-input">
+            </div>
+            <div class="input-container">
+                <div class="input-controller">
+                    <label for="uname"><b>Full name</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" id="uname">
                 </div>
-                <label for="uname"><b>Full name</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" id="uname" >
                 <div class="error"></div>
             </div>
-            <div class="input-controller">
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter email" name="email" id="email" >
+            
+            <div class="input-container">
+                <div class="input-controller">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter email" name="email" id="email" >
+
+                </div>
                 <div class="error"></div>
             </div>
-            <div class="input-controller">
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" id="psw" >
+
+            <div class="input-container">
+                <div class="input-controller">
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw" >
+                </div>
                 <div class="error"></div>
             </div>
+
             <div class="submit-control-container">
                 <div class="submit-control">
                     <button type="submit" onclick="saveLogin()">sign Up</button>
