@@ -32,7 +32,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+
     /* background-color: #fff; */
     margin:50px;
     padding:30px
@@ -41,7 +41,18 @@ input{
     width:400px;
     height: 35px;
     border-radius: 10px;
-    border: 0;
+    
+}
+.input-controller input:focus{
+    outline: 0;
+}
+
+.input-controller.success input{
+    border-color: #09c372;
+}
+
+.input-controller.error input{
+    border-color: #ff3860;
 }
 .submit-control-container{
     display: flex;

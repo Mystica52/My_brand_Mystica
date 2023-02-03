@@ -8,7 +8,8 @@ function updateBlogFunc(id){
         if(value.id == id){
            document.getElementById('id').value = value.id
            document.getElementById('title').value = value.title
-           document.getElementById('author').value = value.author
+           document.getElementById('image').value = value.image
+           document.getElementById('readMore').value = value.readMore
         }
     })
     blogModal.style.display = "flex";

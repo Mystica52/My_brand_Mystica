@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 const username = document.getElementById('uname');
 const email = document.getElementById('email');
-const password = document.getElementById('password');
+const password = document.getElementById('psw');
 
 
 form.addEventListener('submit', e => {
@@ -61,7 +61,7 @@ const validateInputs = () => {
         setSuccess(password);
     }
 
-    
-    
+
+
 
 };

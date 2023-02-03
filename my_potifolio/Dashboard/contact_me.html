@@ -86,22 +86,7 @@
             window.location.href="./../portifolio/index.html"
         }
 
-        var blogModal= document.querySelector(".create-blog-modal");
-        var closeBlogModal= document.querySelector("#close-blog-modal");
-       function blogModalFunc(){
-        blogModal.style.display = "flex";
-        }
-        closeBlogModal.addEventListener("click", closeBlogModalFunc);
-        function closeBlogModalFunc(){
-            blogModal.style.display = "none";
-        }
-
-        window.addEventListener("click", outsideClickBlogModal);
-        function outsideClickBlogModal(e){
-            if(e.target == blogModal){
-                blogModal.style.display = "none";
-            }
-        }
+    
 
 
     </script>

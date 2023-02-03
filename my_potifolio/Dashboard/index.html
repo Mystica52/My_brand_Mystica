@@ -41,8 +41,8 @@
                             <thead>
                                 <th>No</th>
                                 <th>Title</th>
-                                <th>Author</th>
-                                <th colspan="3 ">Action</th>
+                                <th>Description</th>
+                                <th >Image</th>
                             </thead>
                             <tbody id="table">
 
@@ -63,6 +63,7 @@
                     <div class="input-text">
                         <input type="hidden" name="id" id="id" class="text-input">
                     </div>
+                    
 
                     <div class="input-text">
                         <label >Title</label>
@@ -70,8 +71,14 @@
                     </div>
 
                     <div class="input-text">
-                        <label >Author</label>
-                        <input type="text" name="author"  id="author" class="text-input">
+                        <label >image</label>
+                        <input type="file" name="image"  id="image" class="text-input">
+                    </div>
+
+                    
+                    <div class="input-text">
+                        <label >read more</label>
+                        <input type="text" name="readMore"  id="readMore" class="text-input">
                     </div>
                     <div class="button-addBlog">
                         <button type="submit"  class=" btn btn-big" onclick="saveBlog()" >Add blog</button>
@@ -126,6 +133,7 @@
     <script src="./js/save.js"></script>
     <script src="./js/remove.js"></script>
     <script src="./js/find.js"></script>
+    <script src="./js/model.js"></script>
     <script>
         allBlogData()
     </script>

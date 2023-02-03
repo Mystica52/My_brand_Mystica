@@ -15,18 +15,23 @@
             <tr>
                 <td>${i+1}</td>
                 <td>${value.title}</td>
-                <td>${value.author}</td>
+                <td>${value.image}</td>
+                <td>${value.readMore}</td>
+                <td> <img src='../../../../images/1a.png'/></td>
                 
                 <td>
                     <button class="btn btn-sm btn-success" onclick="updateBlogFunc(${value.id})">
                         <i class="fa fa-edit"></i>
                     </button>
+                    
                 </td>
+
                 <td>
                     <button class="btn btn-sm btn-danger" onclick="removeBlogData(${value.id})">
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
+
             </tr>`
     })
 }

@@ -1,6 +1,18 @@
-
+const input=document.getElementById('image')
+var blogImage=[]
+input.addEventListener('change', (event)=>{
+    const image=event.target.files[0]
+    const reader=new FileReader();
+    reader.readAsDataURL(image);
+    reader.addEventListener('load', ()=>{
+        blogImage.push(reader.result)
+    })
+} )
+console.log(blogImage)
 //method to save data into localstorage
 function saveBlog(){
+
+
     //get data from localstorage and store to bloglist array
     //we must to use JSON.parse, because data as string, we need convert to array
     blogList = JSON.parse(localStorage.getItem('listItem')) ?? []
@@ -16,7 +28,8 @@ function saveBlog(){
         blogList.forEach(value => {
             if(document.getElementById('id').value == value.id){
                 value.title      = document.getElementById('title').value,
-                value.author     = document.getElementById('author').value
+                value.image     = blogImage[0],
+                value.readMore     = document.getElementById('readMore').value
             }
         });
 
@@ -30,7 +43,8 @@ function saveBlog(){
         var item = {
             id        : id + 1,
             title     : document.getElementById('title').value,
-            author       : document.getElementById('author').value
+            image       : blogImage[0],
+            readMore      : document.getElementById('readMore').value
         }
 
         //add item data to array blogList
