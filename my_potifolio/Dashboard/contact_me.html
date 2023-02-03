@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact me</title>
+    <link rel="stylesheet" href="./style/css.css">
+    <script src="https://kit.fontawesome.com/6ef21de30d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <h1 class="logo">Rose Mystica</h1>
+            </div>
+            <div class="profile-ctr">
+                <i class="fa-solid fa-user"></i>
+                <span>Marie</span>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+        </div>
+        <div class="dashboard-content">
+            <div class="aside-bar">
+                
+                    <button onclick="manageBlogFunc()" class="btn-ctl" id="blog-btn">manage blog</button>
+                    <button onclick="manageContactFunc()" class="btn-ctl" id="contact-btn">contact me</button>
+                    <button onclick="manageLoginFunc()" class="btn-ctl" id="contact-btn">manager login-user</button>
+                    <button onclick="goToPortfolio()" class="btn-ctl" id="contact-btn">Go to portfolio</button>
+                
+                
+            </div>
+            <div class="content-section">
+                <div class="content-section-container" >
+                    <div class="addBlog-button">
+                    </div>
+                    <div class="content" >
+                        <!-- <h2 class="page-title">manage blogs</h2> -->
+                        <table>
+                            <thead>
+                                <th>No</th>
+                                <th>Full Name</th>
+                                <th>Address</th>
+                                <th>Message</th>
+                            </thead>
+                            <tbody id="contact-table">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="create-blog-modal">
+            <div class="create-blog-card">
+                <div class="close-modal">
+                    <i id="close-blog-modal"  class="fa-solid fa-square-xmark"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+    <script>
+        var manageBlog=document.querySelector("#blog-btn");
+        function manageBlogFunc(){
+            window.location.href="./index.html"
+
+        }
+        var manageBlog=document.querySelector("#contact-btn");
+        
+
+        function manageContactFunc(){
+            window.location.href="./contact_me.html"
+        }
+
+        function manageLoginFunc(){
+            window.location.href="./control_login.html"
+        }
+
+        function goToPortfolio(){
+            window.location.href="./../portifolio/index.html"
+        }
+
+    
+
+
+    </script>
+    <!-- <script src="./js/scripts.js"></script> -->
+    <script src="./js/all_data.js"></script>
+    <script src="./js/save.js"></script>
+    <script src="./js/save_contact.js"></script>
+    <script src="./js/find.js"></script>
+    <script src="./js/remove.js"></script>
+    <script>
+        allContactData()
+    </script>
+    
+
+</body>
+</html>
