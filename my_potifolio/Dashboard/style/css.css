@@ -187,3 +187,7 @@ input{
     width:80%;
 }
 
+.blog-image img{
+    height: 150px;
+    width:250px
+}

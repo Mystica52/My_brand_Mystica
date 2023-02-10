@@ -19,16 +19,7 @@ function removeBlogData(id){
 
 //remove the  contact data   by id
 function removeContactData(id){
-    //get data from localstorage and store to contaclist array
-    //we must to use JSON.parse, because data as string, we need convert to array
-    contactList = JSON.parse(localStorage.getItem('contactItem')) ?? []
-
-    contactList = contactList.filter(function(value){ 
-        return value.id != id; 
-    });
-
-    // save array into localstorage
-    localStorage.setItem('contactItem', JSON.stringify(contactList))
+    
 
     //get data again
     allContactData()

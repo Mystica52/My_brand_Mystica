@@ -24,10 +24,10 @@
         <div class="dashboard-content">
             <div class="aside-bar">
                 
-                    <button onclick="manageBlogFunc()" class="btn-ctl" id="blog-btn">manage blog</button>
-                    <button onclick="manageContactFunc()" class="btn-ctl" id="contact-btn">contact me</button>
-                    <button onclick="manageLoginFunc()" class="btn-ctl" id="contact-btn">manager login-user</button>
-                    <button onclick="goToPortfolio()" class="btn-ctl" id="contact-btn">Go to portfolio</button>
+                    <a href ="./index.html"><button  class="btn-ctl" id="blog-btn">manage blog</button></a> 
+                    <a href="./contact_me.html"><button   class="btn-ctl" id="contact-btn">contact me</button></a>
+                    <a href="./control_login.html"><button  class="btn-ctl" id="contact-btn">manager login-user</button></a>
+                    <a href="./../portifolio/index.html"><button  class="btn-ctl" id="contact-btn">Go to portfolio</button></a>
                 
                 
             </div>
@@ -74,16 +74,14 @@
         var manageBlog=document.querySelector("#contact-btn");
         
 
-        function manageContactFunc(){
-            window.location.href="./contact_me.html"
-        }
+        
 
         function manageLoginFunc(){
             window.location.href="./control_login.html"
         }
 
         function goToPortfolio(){
-            window.location.href="./../portifolio/index.html"
+            window.location.href="./../../my_potifolio/portifolio/index.html"
         }
 
     
@@ -97,9 +95,9 @@
     <script src="./js/find.js"></script>
     <script src="./js/remove.js"></script>
     <script>
-        allContactData()
+        <!-- allContactData() -->
     </script>
     
-
+    <script src="./../Dashboard/js/messageD.js"></script>
 </body>
 </html>

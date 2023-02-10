@@ -23,10 +23,10 @@
         <div class="dashboard-content">
             <div class="aside-bar">
                 
-                    <button onclick="manageBlogFunc()" class="btn-ctl" id="blog-btn">manage blog</button>
-                    <button onclick="manageContactFunc()" class="btn-ctl" id="contact-btn">contact me</button>
-                    <button onclick="manageLoginFunc()" class="btn-ctl" id="contact-btn">manager login-user</button>
-                    <button onclick="goToPortfolio()" class="btn-ctl" id="contact-btn">Go to portfolio</button>
+                    <a href ="./index.html"><button  class="btn-ctl" id="blog-btn">manage blog</button></a>
+                    <a href="./contact_me.html"><button   class="btn-ctl" id="contact-btn">contact me</button></a>
+                    <a href="./control_login.html"><button  class="btn-ctl" id="contact-btn">manager login-user</button></a>
+                    <a href="./../portifolio/index.html"><button  class="btn-ctl" id="contact-btn">Go to portfolio</button></a>
                 
             </div>
             <div class="content-section">
@@ -41,8 +41,8 @@
                             <thead>
                                 <th>No</th>
                                 <th>Title</th>
-                                <th>Description</th>
                                 <th >Image</th>
+                                <th>Description</th>
                             </thead>
                             <tbody id="table">
 
@@ -59,11 +59,11 @@
                 <div class="close-modal">
                     <i id="close-blog-modal"  class="fa-solid fa-square-xmark"></i>
                 </div>
-                <form>
-                    <div class="input-text">
+                <form id="addBlog">
+                    <!-- <div class="input-text">
                         <input type="hidden" name="id" id="id" class="text-input">
                     </div>
-                    
+                     -->
 
                     <div class="input-text">
                         <label >Title</label>
@@ -78,10 +78,10 @@
                     
                     <div class="input-text">
                         <label >read more</label>
-                        <input type="text" name="readMore"  id="readMore" class="text-input">
+                        <input type="text" name="description"  id="description" class="text-input">
                     </div>
                     <div class="button-addBlog">
-                        <button type="submit"  class=" btn btn-big" onclick="saveBlog()" >Add blog</button>
+                        <button type="submit"  class=" btn btn-big" onclick=" (data => renderBlogsD(data))" >Add blog</button>
                     </div>
                 </form>
             </div>
@@ -98,7 +98,7 @@
 
 
         function manageContactFunc(){
-            window.location.href="./contact_me.html"
+            location.href="./contact_me.html"
         }
 
         function manageLoginFunc(){
@@ -109,7 +109,7 @@
             window.location.href="./../portifolio/index.html"
         }
 
-        var blogModal= document.querySelector(".create-blog-modal");
+        <!-- var blogModal= document.querySelector(".create-blog-modal");
         var closeBlogModal= document.querySelector("#close-blog-modal");
        function blogModalFunc(){
         blogModal.style.display = "flex";
@@ -124,18 +124,18 @@
             if(e.target == blogModal){
                 blogModal.style.display = "none";
             }
-        }
+        } -->
 
 
     </script>
-    <script src="./js/scripts.js"></script>
+    <!-- <script src="./js/scripts.js"></script> -->
     <script src="./js/all_data.js"></script>
     <script src="./js/save.js"></script>
     <script src="./js/remove.js"></script>
     <script src="./js/find.js"></script>
     <script src="./js/model.js"></script>
-    <script>
-        allBlogData()
-    </script>
+    <script src="./js/blog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.9.0/src/toastify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>

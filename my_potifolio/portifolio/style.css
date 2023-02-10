@@ -309,19 +309,14 @@ ul li a:hover{
 .blog-image
 {
     background-color: #034887;
-    height:170px;
-    margin-bottom:50px;
+    height:150px;
+    width: 250px;
     background-size: cover;
 }
 
-.img1{
-    background-image: url(./../images/children_pic.jfif);
-}
-.img2{
-    background-image: url(./../images/chllengeEd-pic.jfif);
-}
-.img3{
-    background-image: url(./../images/software_pic.jpg);
+.blog-image img{
+    height: 150px;
+    width:250px
 }
 
 .Blog-card p{

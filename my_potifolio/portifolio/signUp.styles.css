@@ -51,6 +51,7 @@ input{
     border-color: #09c372;
 }
 
+
 .input-controller.error input{
     border-color: #ff3860;
 }

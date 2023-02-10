@@ -9,7 +9,7 @@ function updateBlogFunc(id){
            document.getElementById('id').value = value.id
            document.getElementById('title').value = value.title
            document.getElementById('image').value = value.image
-           document.getElementById('readMore').value = value.readMore
+           document.getElementById('description').value = value.readMore
         }
     })
     blogModal.style.display = "flex";
