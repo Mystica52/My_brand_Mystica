@@ -49,13 +49,14 @@ const renderBlogsD = (posts) => {
     
 
     // console.log(post)
-  });
+  })
 };
 console.log("blogsId",blogsId);
 // console.log(posts)
 fetch(url)
   .then((res) => res.json())
-  .then((data) => renderBlogsD(data));
+  .then((data) => renderBlogsD(data))
+  
 
 //delete blog
 function deleteBlog(id) {
@@ -127,10 +128,7 @@ const data={
   title: titleValue.value,
   image: "https://res.cloudinary.com/dddf3qeth/image/upload/v1674852139/olympic_flag.jpg",
   description: descriptionValue.value
-
-
-  
-}
+ }
   fetch(path, {
     method: "POST",
     headers: {
@@ -144,45 +142,18 @@ const data={
       const dataArr = [];
       dataArr.push(data);
       renderBlogsD(dataArr);
+      location.reload();
     }).catch(error =>{
       console.log(error)
     })
+    blogModal.style.display = "flex";
 
   // )
 });
 
 //edit blog
 
-function updateBlogFunc(id) {
- 
-const data={
-  title: titleValue.value,
-  image: "https://res.cloudinary.com/dddf3qeth/image/upload/v1674852139/olympic_flag.jpg",
-  description: descriptionValue.value
-}
-  
-    const  url5 = `https://backendportifolio-production.up.railway.app/posts/update/${id}`;
-    fetch(url5, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body:JSON.stringify(
-        data),
-    }).then(function (res) {
-      console.log(res.json())
-      .then(data =>console.log("success", data))
-    });
 
-    
-  // )
-
-
-  console.log("157", id);
-
-  editBlogModal.style.display = "flex";
-  
-}
 
 
 var blogModal= document.querySelector(".create-blog-modal");
@@ -201,4 +172,8 @@ var blogModal= document.querySelector(".create-blog-modal");
                 blogModal.style.display = "none";
             }
         }
-        
+    
+
+
+
+       
