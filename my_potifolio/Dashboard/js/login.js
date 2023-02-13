@@ -2,7 +2,7 @@ const loginForm = document.getElementById("loginForm");
 const emailValue = document.getElementById("email");
 const passwordValue = document.getElementById("psw");
 
-path1 = "http://localhost:3000/auth/login"
+path1 = "https://backendportifolio-production.up.railway.app/auth/login"
 // function loginUser1() {
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();

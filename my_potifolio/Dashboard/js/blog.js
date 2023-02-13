@@ -8,18 +8,18 @@ const titleValue = document.getElementById("title");
 const imageValue = document.getElementById("image");
 const descriptionValue = document.getElementById("description");
 
-const url = "http://localhost:3000/posts/blogs";
+const url = "https://backendportifolio-production.up.railway.app/posts/blogs";
 
 
 const blogsId=[];
 let i = 0;
 const renderBlogsD = (posts) => {
-  console.log("hello", posts);
+  localStorage.setItem("blogItem",JSON.stringify(posts));
   posts.forEach((post) => {
     // console.log(post._id)
     table.innerHTML += `
         <tr >
-        <div id= "${post._id}">
+        <div>
             <td>${i + 1}</td>
             <td>${post.title}</td>
             <td><div class="blog-image"><img src="${post.image}"/>
@@ -27,7 +27,7 @@ const renderBlogsD = (posts) => {
             <td>${post.description}</td>
 
             <td>
-                <button  id="edit-blog" onclick = "updateBlogFunc(editBlog('${post._id}'))" >
+                <button  id="edit-blog" onclick = "updateBlogFunc('${post._id}')" >
                     <i class="fa fa-edit"></i>
                 </button>
             </td>
@@ -45,7 +45,7 @@ const renderBlogsD = (posts) => {
 
         </tr>`;
         i++;
-        blogsId.push(post._id)
+        // blogsId.push(post._id)
     
 
     // console.log(post)
@@ -59,12 +59,12 @@ fetch(url)
 
 //delete blog
 function deleteBlog(id) {
-  document.getElementById("delete-button").addEventListener("click", (e) => {
-    e.preventDefault();
-    // console.log("hello")
-    const url2 = `http://localhost:3000/posts/delete/${id}`;
-    console.log("url", url2);
-    fetch(url2, {
+  // document.getElementById("delete-button").addEventListener("click", (e) => {
+    // e.preventDefault();
+
+    console.log("hello", id)
+    const url2 = `https://backendportifolio-production.up.railway.app/posts/delete/${id}`;
+     fetch(url2,  {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     }).then(function (res) {
@@ -90,54 +90,63 @@ function deleteBlog(id) {
       //   renderBlogsD();
       location.reload();
     });
-  });
+  // });
 }
 
-function editBlog(id) {
-  console.log("idedit", id);
-  document.getElementById("edit-blog").addEventListener("click", (e) => {
-    e.preventDefault();
+// function editBlog(id) {
+//   console.log("idedit", id);
+//   document.getElementById("edit-blog").addEventListener("click", (e) => {
+//     e.preventDefault();
     
-     titleValue.textContent=document.getElementById('');
-     document.getElementById("image").value;
-     document.getElementById("description").value;
-    console.log("object", title1, description);
-    const url3 = `http://localhost:3000/posts/${id}`;
-    console.log("url", url3);
-    fetch(url3, {
-      method: "GET",
-      headers: { "Content-type": "application/json" },
-    }).then(function (res) {
-      console.log("acknowledged", res.status);
-    });
-  });
-  return id;
-}
+//      titleValue.textContent=document.getElementById('');
+//      document.getElementById("image").value;
+//      document.getElementById("description").value;
+//     console.log("object", title1, description);
+//     const url3 = `https://backendportifolio-production.up.railway.app/posts/${id}`;
+//     console.log("url", url3);
+//     fetch(url3, {
+//       method: "GET",
+//       headers: { "Content-type": "application/json" },
+//     }).then(function (res) {
+//       console.log("acknowledged", res.status);
+//     });
+//   });
+//   return id;
+// }
 
 
 
-const path = "http://localhost:3000/posts/createBlog";
+const path = "https://backendportifolio-production.up.railway.app/posts/createBlog";
 
 addBlogForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  // console.log(nameValue.value)
+  console.log(titleValue.value)
+  console.log(descriptionValue.value)
+
+const data={
+  title: titleValue.value,
+  image: "https://res.cloudinary.com/dddf3qeth/image/upload/v1674852139/olympic_flag.jpg",
+  description: descriptionValue.value
+
+
+  
+}
   fetch(path, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      title: titleValue.value,
-      image: imageValue.value,
-      description: descriptionValue.value,
-    }),
+    body: JSON.stringify(data),
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       const dataArr = [];
       dataArr.push(data);
       renderBlogsD(dataArr);
-    });
+    }).catch(error =>{
+      console.log(error)
+    })
 
   // )
 });
@@ -145,19 +154,33 @@ addBlogForm.addEventListener("submit", (e) => {
 //edit blog
 
 function updateBlogFunc(id) {
-  const url5 = `http://localhost:3000/posts/update/${id}`;
-  fetch(url5, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(function (res) {
-    console.log(res.json());
-  });
+ 
+const data={
+  title: titleValue.value,
+  image: "https://res.cloudinary.com/dddf3qeth/image/upload/v1674852139/olympic_flag.jpg",
+  description: descriptionValue.value
+}
+  
+    const  url5 = `https://backendportifolio-production.up.railway.app/posts/update/${id}`;
+    fetch(url5, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify(
+        data),
+    }).then(function (res) {
+      console.log(res.json())
+      .then(data =>console.log("success", data))
+    });
+
+    
+  // )
+
 
   console.log("157", id);
 
-  blogModal.style.display = "flex";
+  editBlogModal.style.display = "flex";
   
 }
 
@@ -178,3 +201,4 @@ var blogModal= document.querySelector(".create-blog-modal");
                 blogModal.style.display = "none";
             }
         }
+        

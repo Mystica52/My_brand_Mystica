@@ -3,7 +3,7 @@ const blogList=document.getElementById('blog-data')
 let output='';
 
 
-const url ="http://localhost:3000/posts/blogs";
+const url ="https://backendportifolio-production.up.railway.app/posts/blogs";
 
 
 let renderBlogsP=(posts)=>{

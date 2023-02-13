@@ -1,10 +1,10 @@
-const url =" http://localhost:3000/messages";
+const url =" https://backendportifolio-production.up.railway.app/messages";
 const contactTable = document.getElementById('contact-table')
 const blogsId=[];
 let i = 0;
-const rendMessagesD = (posts) => {
-  console.log("hello", posts);
-  posts.forEach((msg) => {
+const rendMessagesD = (messages) => {
+  console.log("hello", messages);
+  messages.forEach((msg) => {
     // console.log(msg._id)
     contactTable.innerHTML += `
         <tr >
@@ -15,9 +15,7 @@ const rendMessagesD = (posts) => {
             <td>${msg.message}</td>
              <td>
             
-                <button class="delete-button" id = "delete-button" onclick= "deleteBlog('${
-                  msg._id
-                }')" >
+                <button class="delete-button" id = "delete-btn" onclick= "deleteBlog('${msg._id}')" >
                     <i class="fa fa-trash"></i>
                 </button>
             
@@ -33,22 +31,25 @@ const rendMessagesD = (posts) => {
   });
 };
 // console.log("messageId",blogsId);
-// console.log(posts)
+// console.log(messages)
 fetch(url)
   .then((res) => res.json())
   .then((data) => rendMessagesD(data));
 
+
+  
 //delete blog
 function deleteBlog(id) {
-  document.getElementById("delete-button").addEventListener("click", (e) => {
-    e.preventDefault();
-    // console.log("hello")
-    const url2 = `http://localhost:3000/messages/delete/${id}`;
+  // document.getElementById("delete-btn").addEventListener("click", (e) => {
+    // e.preventDefault();
+    console.log("hello", id)
+    const url2 = `https://backendportifolio-production.up.railway.app/messages/delete/${id}`;
     console.log("url", url2);
     fetch(url2, {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
-    }).then(function (res) {
+    })
+    .then(function (res) {
       console.log("acknowledged", res.status);
 
       if (res.status == 200) {
@@ -68,10 +69,10 @@ function deleteBlog(id) {
         alert("error");
       }
 
-      //   renderBlogsD();
-      location.reload();
+        // renderMessageD();
+      // location.reload();
     });
-  });
+  // });
 }
 
 

@@ -4,7 +4,7 @@ const addUserForm = document.getElementById("form");
 const nameValue = document.getElementById("uname");
 const emailValue = document.getElementById("email");
 const passwordValue = document.getElementById("psw");
-const path = "http://localhost:3000/auth";
+const path = "https://backendportifolio-production.up.railway.app/auth";
 const div = document.getElementById("success");
 
 function addUser1() {

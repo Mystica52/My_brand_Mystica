@@ -1,5 +1,5 @@
 ClassicEditor
-    .create( document.querySelector( '#description' ), {
+    .create( document.querySelector( '#readMore' ), {
         toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
         heading: {
             options: [
