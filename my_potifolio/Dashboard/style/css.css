@@ -73,17 +73,26 @@
     padding: 50px 50px 50px 50px;
     background-color: #f1faee;
     width: 80%;
-    height:60%;
+    height:80%;
     border-radius: 10px;
     
 }
 .btn-big{
-    width:60px ;
+    width:80px ;
     height: 30px;
     background-color: #023047;
     border: 0;
     color: white;
-    
+    border-radius: 20px;
+}
+
+.button-addBlog{
+    width:80px ;
+    height: 30px;
+    background-color: #023047;
+    border: 0;
+    color: white;
+    border-radius: 20px;
 }
 
 .addBlog-button{
@@ -92,7 +101,7 @@
 .btn-big:hover{
     
     background-color: black;
-    width:60px ;
+    width:80px ;
     height: 30px;
     
 }
@@ -211,4 +220,8 @@ input{
 .blog-image img{
     height: 150px;
     width:250px
+}
+
+.button-addBlog{
+   background-color: #023047;
 }

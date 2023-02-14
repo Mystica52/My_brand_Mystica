@@ -1,5 +1,29 @@
-
+var imgPrevw=document.getElementById("img-prevw")
+var CLOUDINARY_URL ='https://api.cloudinary.com/v1_1/dddf3qeth/upload'
+var CLOUDINARY_UPLOAD_PRESET = 'bltstveh'
+let img_uploaded;
+const imageVal = document.getElementById("imge");
 function updateBlogFunc(id) {
+
+    imageVal.addEventListener("change", function(e){
+        var file = e.target.files[0];
+        var formData= new FormData();
+        formData.append('file',file);
+        formData.append('upload_preset',CLOUDINARY_UPLOAD_PRESET);
+         axios({
+          url:CLOUDINARY_URL,
+          method:'POST',
+          headers:{
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          data:formData
+         }).then(function(res){
+          console.log(res);
+          img_uploaded=res.data.secure_url
+         }).catch(function(err){
+          console.log(err)
+         })
+      })
   //we must to use JSON.parse, because data as string, we need convert to array
   blogItem = JSON.parse(localStorage.getItem("blogItem")) ?? [];
   blogItem.forEach(function (value) {
@@ -19,7 +43,7 @@ const eDescriptionValue = document.getElementById("descrption");
     e.preventDefault();
     const firstData = {
       title: eTitleValue.value,
-      image:"https://res.cloudinary.com/dddf3qeth/image/upload/v1674852139/olympic_flag.jpg",
+      image: img_uploaded,
       description: eDescriptionValue.value,
     };
 //   console.log(titleValue.value)

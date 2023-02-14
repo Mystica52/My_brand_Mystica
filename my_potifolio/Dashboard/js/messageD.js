@@ -15,7 +15,7 @@ const rendMessagesD = (messages) => {
             <td>${msg.message}</td>
              <td>
             
-                <button class="delete-button" id = "delete-btn" onclick= "deleteBlog('${msg._id}')" >
+                <button class="delete-button" id = "delete-btn" onclick= "deleteMessage('${msg._id}')" >
                     <i class="fa fa-trash"></i>
                 </button>
             
@@ -39,7 +39,7 @@ fetch(url)
 
   
 //delete blog
-function deleteBlog(id) {
+function deleteMessage(id) {
   // document.getElementById("delete-btn").addEventListener("click", (e) => {
     // e.preventDefault();
     console.log("hello", id)
@@ -70,7 +70,7 @@ function deleteBlog(id) {
       }
 
         // renderMessageD();
-      // location.reload();
+      location.reload();
     });
   // });
 }

@@ -8,6 +8,12 @@ const titleValue = document.getElementById("title");
 const imageValue = document.getElementById("image");
 const descriptionValue = document.getElementById("description");
 
+var imgPreview=document.getElementById("img-preview")
+var CLOUDINARY_URL ='https://api.cloudinary.com/v1_1/dddf3qeth/upload'
+var CLOUDINARY_UPLOAD_PRESET = 'bltstveh'
+let img_upload
+
+
 const url = "https://backendportifolio-production.up.railway.app/posts/blogs";
 
 
@@ -94,26 +100,29 @@ function deleteBlog(id) {
   // });
 }
 
-// function editBlog(id) {
-//   console.log("idedit", id);
-//   document.getElementById("edit-blog").addEventListener("click", (e) => {
-//     e.preventDefault();
-    
-//      titleValue.textContent=document.getElementById('');
-//      document.getElementById("image").value;
-//      document.getElementById("description").value;
-//     console.log("object", title1, description);
-//     const url3 = `https://backendportifolio-production.up.railway.app/posts/${id}`;
-//     console.log("url", url3);
-//     fetch(url3, {
-//       method: "GET",
-//       headers: { "Content-type": "application/json" },
-//     }).then(function (res) {
-//       console.log("acknowledged", res.status);
-//     });
-//   });
-//   return id;
-// }
+//upload image on cloudinary
+
+imageValue.addEventListener("change", function(e){
+  var file = e.target.files[0];
+  var formData= new FormData();
+  formData.append('file',file);
+  formData.append('upload_preset',CLOUDINARY_UPLOAD_PRESET);
+   axios({
+    url:CLOUDINARY_URL,
+    method:'POST',
+    headers:{
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    data:formData
+   }).then(function(res){
+    console.log(res);
+    img_upload=res.data.secure_url
+   }).catch(function(err){
+    console.log(err)
+   })
+})
+
+
 
 
 
@@ -126,9 +135,10 @@ addBlogForm.addEventListener("submit", (e) => {
 
 const data={
   title: titleValue.value,
-  image: "https://res.cloudinary.com/dddf3qeth/image/upload/v1674852139/olympic_flag.jpg",
+  image: img_upload,
   description: descriptionValue.value
  }
+//  console.log (data)
   fetch(path, {
     method: "POST",
     headers: {

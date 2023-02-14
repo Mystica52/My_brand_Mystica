@@ -174,7 +174,7 @@ ul li a:hover{
 
 #skills{
     
-    padding:90px;
+    padding:50px;
 }
 .skills-card{
     /* width:250px;
@@ -189,7 +189,7 @@ ul li a:hover{
     padding:20px;
     transition: all .3s ease-in; */
 
-    width:250px;
+    width:350px;
     height: 400px;
     background-color: #fff;
     margin:10px;
@@ -213,29 +213,27 @@ ul li a:hover{
     margin-left:40px;
 }
 
-#front-title{
+
+.my-skills h2{
     color:#fff;
-    /* margin-bottom:12px */
+    
+    margin-bottom:15px
 }
 
-#back-title{
-    color:#fff;
-    /* margin-bottom:30px */
-}
-#program-title{
-    color:#fff;
-    /* margin-bottom:12px */
+.my-skills p{
+    color: #fff;
+    font-size: 15px;
 }
 .front-icon{
     width: 100%;
-    height:50vh;
+    height:40vh;
     display:flex;
     justify-content: center;
     align-items:center;
 }
 .front-icon img{
-    height:100px;
-    width:100px;
+    height:80px;
+    width:80px;
     border-radius:50%;
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
@@ -245,7 +243,7 @@ ul li a:hover{
 
 .back-icon{
     width: 100%;
-    height:50vh;
+    height:40vh;
     padding:0px;
     display:flex;
     justify-content: center;
@@ -264,7 +262,7 @@ ul li a:hover{
 }
 .program-icon{
     width: 100%;
-    height:50vh;
+    height:40vh;
     display:flex;
     justify-content: center;
     align-items:center;
@@ -283,7 +281,7 @@ ul li a:hover{
 /* blog */
 #blog{
     background-color: #03478736;
-    padding:90px
+    padding:50px
 }
 .blog-title{
     text-align: center;
@@ -297,10 +295,11 @@ ul li a:hover{
     align-items: center;
     gap: 40px;
     padding-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .Blog-card{
-    width:250px;
+    width:350px;
     height: 400px;
     background-color: #fff;
     /* margin:10px; */
@@ -309,21 +308,32 @@ ul li a:hover{
 .blog-image
 {
     background-color: #034887;
-    height:150px;
+    height:50px;
     width: 250px;
     background-size: cover;
+    margin-bottom:160px;
+    border-radius: 15px 15px 0 0;
 }
 
 .blog-image img{
-    height: 150px;
-    width:250px
+    height: 200px;
+    width:350pX;
+    border-radius: 15px 15px 0 0;
+    
+}
+.Blog-card h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
 }
 
 .Blog-card p{
     padding:10px;
     font-family: sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    
 }
+
 .Blog-card a{
     background-color: #034887;
     margin: 20px 50px;
@@ -358,7 +368,7 @@ ul li a:hover{
 /* my work */
 
 #my-work{
-    padding:90px
+    padding:50px
 }
 .work-title{
     text-align: center;
@@ -375,7 +385,7 @@ ul li a:hover{
 }
 
 .work-card{
-    width:250px;
+    width:350px;
     height: 400px;
     background-color:#034887;
     margin:10px;
@@ -386,6 +396,8 @@ ul li a:hover{
 {
     width: 40%;
     height:20vh;
+    display:flex;
+    justify-content: center;
 }
 .work-icon i{
     color: #fff;
@@ -436,7 +448,7 @@ ul li a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px;
+    padding: 30px;
     
 }
 
