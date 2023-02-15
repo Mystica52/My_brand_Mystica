@@ -37,7 +37,7 @@ path1 = "https://backendportifolio-production.up.railway.app/auth/login"
         });
   
         document.getElementById("loginForm").reset();
-        location.href = "./../../../Dashboard/index.html";
+        location.href = "./../../Dashboard/index.html";
       } else {
         alert("Error");
       }
